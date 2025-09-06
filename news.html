@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>📰 圣诞新闻</title>
+  <style>
+    body {
+      background: #1c1c1c;
+      color: white;
+      font-family: "Microsoft YaHei", sans-serif;
+      padding: 20px;
+    }
+    a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>📰 圣诞新闻</h1>
+  <div id="news">正在加载新闻...</div>
+  <script>
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/rss.xml")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("news").innerHTML = data.items.map(
+        item => `<p><a href="${item.link}" target="_blank">${item.title}</a></p>`
+      ).join("");
+    });
+  </script>
+</body>
+</html>

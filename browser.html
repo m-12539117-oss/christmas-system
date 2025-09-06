@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>🌐 圣诞浏览器</title>
+  <style>
+    body {
+      background: #003366;
+      color: white;
+      text-align: center;
+      font-family: "Microsoft YaHei", sans-serif;
+      padding-top: 50px;
+    }
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 圣诞搜索</h1>
+  <input type="text" id="search" placeholder="输入搜索内容">
+  <button onclick="goSearch()">搜索</button>
+  <script>
+    function goSearch(){
+      const q = document.getElementById("search").value;
+      window.open("https://www.bing.com/search?q=" + encodeURIComponent(q));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>🎁 圣诞惊喜</title>
+  <style>
+    body {
+      background: #880000;
+      color: white;
+      font-family: "Microsoft YaHei", sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎁 圣诞倒数日历</h1>
+  <div id="gift"></div>
+  <script>
+    const day = new Date().getDate();
+    if(day <= 25){
+      document.getElementById("gift").innerHTML = `<p>今天的礼物：<strong>第 ${day} 天惊喜！</strong></p>`;
+    } else {
+      document.getElementById("gift").innerHTML = `<p>圣诞节已过，期待明年！</p>`;
+    }
+  </script>
+</body>
+</html>

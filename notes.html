@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>📝 圣诞记事本</title>
+  <style>
+    body {
+      background: #2e2e2e;
+      color: white;
+      font-family: "Microsoft YaHei", sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    textarea {
+      width: 80%;
+      height: 300px;
+      font-size: 16px;
+      padding: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 圣诞记事本</h1>
+  <textarea id="note"></textarea><br>
+  <button onclick="saveNote()">保存</button>
+  <script>
+    function saveNote(){
+      localStorage.setItem("christmasNote", document.getElementById("note").value);
+    }
+    document.getElementById("note").value = localStorage.getItem("christmasNote") || "";
+  </script>
+</body>
+</html>

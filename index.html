@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>圣诞节通讯系统</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", sans-serif;
+      background: linear-gradient(to bottom, #002f4b, #dc4225);
+      color: white;
+      text-align: center;
+    }
+    h1 { margin-top: 50px; }
+    .btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      color: white;
+    }
+    .btn:hover { background: rgba(255,0,0,0.7); }
+  </style>
+</head>
+<body>
+  <h1>🎄 圣诞节通讯系统 🎄</h1>
+  <div id="menu"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const month = new Date().getMonth() + 1;
+      const menu = document.getElementById("menu");
+
+      if(month !== 12){
+        menu.innerHTML = `<h2>距离圣诞节还有 ${12 - month} 个月</h2>`;
+        return;
+      }
+
+      const pages = [
+        {name:"📺 电视", link:"tv.html"},
+        {name:"📰 新闻", link:"news.html"},
+        {name:"🎮 游戏", link:"games.html"},
+        {name:"🌐 上网", link:"browser.html"},
+        {name:"📝 记事本", link:"notes.html"},
+        {name:"🎁 惊喜", link:"surprise.html"}
+      ];
+
+      menu.innerHTML = pages.map(p => 
+        `<a class="btn" href="${p.link}">${p.name}</a>`
+      ).join("");
+    });
+  </script>
+</body>
+</html>
