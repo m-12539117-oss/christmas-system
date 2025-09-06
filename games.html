@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>🎮 圣诞小游戏</title>
-  <style>
-    body {
-      background: #0b1f3a;
-      color: white;
-      text-align: center;
-      font-family: "Microsoft YaHei", sans-serif;
-    }
-    iframe {
-      border: none;
-      margin-top: 20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>🎮 圣诞小游戏大厅</title>
+<style>
+  body {
+    background: #0b1f3a;
+    color: white;
+    text-align: center;
+    font-family: "Microsoft YaHei", sans-serif;
+    padding: 20px;
+  }
+  .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background: crimson;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s;
+  }
+  .btn:hover { background: darkred; }
+  iframe {
+    border: none;
+    margin-top: 20px;
+    width: 960px;
+    height: 600px;
+    background: white;
+  }
+</style>
 </head>
 <body>
-  <h1>🎮 圣诞小游戏</h1>
-  <iframe src="https://games.cdn.famobi.com/html5games/s/santa-run/v1/?fg_domain=play.famobi.com" width="800" height="600"></iframe>
+<h1>🎮 圣诞小游戏大厅</h1>
+<div>
+  <a class="btn" href="#" onclick="loadGame('runner')">🏃 Runner</a>
+  <a class="btn" href="#" onclick="loadGame('racer')">🏎 Racer</a>
+  <a class="btn" href="#" onclick="loadGame('gumball')">🍬 Gumball</a>
+  <a class="btn" href="#" onclick="loadGame('presentbounce')">🎁 Present Bounce</a>
+  <a class="btn" href="#" onclick="loadGame('penguindash')">🐧 Penguin Dash</a>
+</div>
+<iframe id="gameFrame" src=""></iframe>
+
+<script>
+function loadGame(name) {
+  document.getElementById('gameFrame').src = `games/${name}/index.html`;
+}
+</script>
 </body>
 </html>
