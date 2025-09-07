@@ -2,51 +2,35 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>🎮 圣诞小游戏大厅</title>
+<title>🎄 圣诞村传送门</title>
 <style>
   body {
     background: #0b1f3a;
     color: white;
     text-align: center;
     font-family: "Microsoft YaHei", sans-serif;
-    padding: 20px;
+    padding-top: 200px;
   }
   .btn {
     display: inline-block;
-    margin: 10px;
-    padding: 12px 24px;
+    margin: 20px;
+    padding: 20px 40px;
     background: crimson;
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
+    font-size: 28px;
     text-decoration: none;
-    font-size: 18px;
     transition: background 0.3s;
   }
-  .btn:hover { background: darkred; }
-  iframe {
-    border: none;
-    margin-top: 20px;
-    width: 960px;
-    height: 600px;
-    background: white;
+  .btn:hover {
+    background: darkred;
   }
 </style>
 </head>
 <body>
-<h1>🎮 圣诞小游戏大厅</h1>
-<div>
-  <a class="btn" href="#" onclick="loadGame('runner')">🏃 Runner</a>
-  <a class="btn" href="#" onclick="loadGame('racer')">🏎 Racer</a>
-  <a class="btn" href="#" onclick="loadGame('gumball')">🍬 Gumball</a>
-  <a class="btn" href="#" onclick="loadGame('presentbounce')">🎁 Present Bounce</a>
-  <a class="btn" href="#" onclick="loadGame('penguindash')">🐧 Penguin Dash</a>
-</div>
-<iframe id="gameFrame" src=""></iframe>
 
-<script>
-function loadGame(name) {
-  document.getElementById('gameFrame').src = `games/${name}/index.html`;
-}
-</script>
+<a class="btn" href="games/runner/index.html">🎄 进入圣诞村 🎄</a>
+<a class="btn" href="index.html">🏠 返回首页</a>
+
 </body>
 </html>
