@@ -73,6 +73,9 @@
   <!-- 第四行 -->
   <a class="channel-btn" href="https://www.youtube.com/watch?v=AtfN1ddTUC0" target="_blank">📺 综合台·东京圣诞</a>
   <a class="channel-btn" href="index.html">🏠 返回首页</a>
+
+  <!-- 第五行（惊喜频道，默认隐藏） -->
+  <a id="surpriseBtn" class="channel-btn" href="surprise.html" target="_blank" style="display:none;">🎁 圣诞惊喜</a>
 </div>
 
 <script>
@@ -87,6 +90,16 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 updateTime();
+
+// 时间锁逻辑：12月1日到25日显示惊喜按钮
+(function(){
+  const now = new Date();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  if (month === 12 && day >= 1 && day <= 25) {
+    document.getElementById('surpriseBtn').style.display = 'inline-block';
+  }
+})();
 </script>
 
 </body>
