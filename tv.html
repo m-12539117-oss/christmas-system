@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>📺 圣诞电视</title>
-  <style>
-    body {
-      background: #000;
-      color: white;
-      text-align: center;
-      font-family: "Microsoft YaHei", sans-serif;
-    }
-    iframe {
-      margin-top: 20px;
-      border: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>🎄 圣诞直播遥控器</title>
+<style>
+  body {
+    background: #001f3f;
+    color: white;
+    font-family: "Microsoft YaHei", sans-serif;
+    text-align: center;
+    padding: 50px;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  .channel-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .channel-btn {
+    background: crimson;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+    width: 200px;
+  }
+  .channel-btn:hover {
+    background: darkred;
+  }
+</style>
 </head>
 <body>
-  <h1>📺 圣诞电视直播</h1>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UC16niRr50-MSBwiO3YDb3RA" allowfullscreen></iframe>
+
+<h1>📺 圣诞直播遥控器</h1>
+
+<div class="channel-grid">
+  <a class="channel-btn" href="https://www.youtube.com/watch?v=WJ1oxPk_qyA" target="_blank">📰 新闻台</a>
+  <a class="channel-btn" href="https://www.youtube.com/watch?v=qqaG66zKsR4" target="_blank">🎭 综艺台</a>
+  <a class="channel-btn" href="https://www.youtube.com/watch?v=AnpbnhbKK1E" target="_blank">🎶 音乐台</a>
+  <a class="channel-btn" href="https://www.youtube.com/watch?v=8rcXfj22RLk" target="_blank">🎨 卡通台</a>
+  <a class="channel-btn" href="https://www.youtube.com/watch?v=uVKsYhDmkw8" target="_blank">🎬 电影台</a>
+  <a class="channel-btn" href="https://www.youtube.com/watch?v=AUqrV5HowBM" target="_blank">📺 综合台</a>
+</div>
+
 </body>
 </html>
