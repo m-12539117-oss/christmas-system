@@ -20,7 +20,15 @@
       padding: 20px;
       border-radius: 12px;
       display: inline-block;
-      max-width: 400px;
+      max-width: 500px;
+    }
+    a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -30,41 +38,41 @@
 
   <script>
     const gifts = {
-      1: "一首温暖的圣诞歌 🎶",
-      2: "一张雪景壁纸 ❄️",
-      3: "一个圣诞笑话 😂",
-      4: "一段圣诞动画短片 📽️",
-      5: "一杯热可可的配方 ☕",
-      6: "一张圣诞贺卡 📝",
-      7: "一个小游戏链接 🎮",
-      8: "一段圣诞故事 📖",
-      9: "一张圣诞贴纸 🏷️",
-      10: "一段圣诞钢琴曲 🎹",
-      11: "一张圣诞灯饰照片 💡",
-      12: "一份圣诞曲奇食谱 🍪",
-      13: "一段圣诞舞蹈视频 💃",
-      14: "一张圣诞老人照片 🎅",
-      15: "一段圣诞祝福语 💌",
-      16: "一张圣诞树照片 🎄",
-      17: "一段圣诞颂歌合唱 🎤",
-      18: "一份圣诞手工教程 ✂️",
-      19: "一张圣诞邮票 📮",
-      20: "一段圣诞灯光秀视频 🌟",
-      21: "一张圣诞雪人照片 ⛄",
-      22: "一段圣诞烛光晚会视频 🕯️",
-      23: "一份圣诞派对邀请函 🎉",
-      24: "一段平安夜特别祝福 🌙",
-      25: "🎄 圣诞快乐！愿你今天充满喜乐与温暖 ❤️"
+      1: { text: "一首温暖的圣诞歌 🎶", link: "https://www.youtube.com/watch?v=E8gmARGvPlI" },
+      2: { text: "一张雪景壁纸 ❄️", link: "https://unsplash.com/s/photos/christmas-snow" },
+      3: { text: "一个圣诞笑话 😂", link: "https://www.rd.com/list/christmas-jokes/" },
+      4: { text: "一段圣诞动画短片 📽️", link: "https://www.youtube.com/watch?v=J4Fb3xZzKjQ" },
+      5: { text: "一杯热可可的配方 ☕", link: "https://www.allrecipes.com/recipe/20211/hot-chocolate/" },
+      6: { text: "一张圣诞贺卡 📝", link: "https://www.canva.com/cards/templates/christmas/" },
+      7: { text: "一个小游戏链接 🎮", link: "https://santatracker.google.com/" },
+      8: { text: "一段圣诞故事 📖", link: "https://www.whychristmas.com/story/the_christmas_story.shtml" },
+      9: { text: "一张圣诞贴纸 🏷️", link: "https://www.freepik.com/free-photos-vectors/christmas-sticker" },
+      10: { text: "一段圣诞钢琴曲 🎹", link: "https://www.youtube.com/watch?v=U7ZpV3sZJ2Y" },
+      11: { text: "一张圣诞灯饰照片 💡", link: "https://unsplash.com/s/photos/christmas-lights" },
+      12: { text: "一份圣诞曲奇食谱 🍪", link: "https://www.allrecipes.com/recipe/9870/easy-sugar-cookies/" },
+      13: { text: "一段圣诞舞蹈视频 💃", link: "https://www.youtube.com/watch?v=JtG6p5pYkzM" },
+      14: { text: "一张圣诞老人照片 🎅", link: "https://unsplash.com/s/photos/santa-claus" },
+      15: { text: "一段圣诞祝福语 💌", link: "https://www.goodhousekeeping.com/holidays/christmas-ideas/g2975/christmas-card-messages/" },
+      16: { text: "一张圣诞树照片 🎄", link: "https://unsplash.com/s/photos/christmas-tree" },
+      17: { text: "一段圣诞颂歌合唱 🎤", link: "https://www.youtube.com/watch?v=GRWbIoIR04c" },
+      18: { text: "一份圣诞手工教程 ✂️", link: "https://www.countryliving.com/diy-crafts/g1362/christmas-crafts/" },
+      19: { text: "一张圣诞邮票 📮", link: "https://www.usps.com/holiday/holiday-stamps.htm" },
+      20: { text: "一段圣诞灯光秀视频 🌟", link: "https://www.youtube.com/watch?v=V3eyJ6gkFv0" },
+      21: { text: "一张圣诞雪人照片 ⛄", link: "https://unsplash.com/s/photos/snowman" },
+      22: { text: "一段圣诞烛光晚会视频 🕯️", link: "https://www.youtube.com/watch?v=AnpbnhbKK1E" },
+      23: { text: "一份圣诞派对邀请函 🎉", link: "https://www.canva.com/cards/templates/christmas-party-invitation/" },
+      24: { text: "一段平安夜特别祝福 🌙", link: "https://www.youtube.com/watch?v=2gYt0lK3Q0A" },
+      25: { text: "🎄 圣诞快乐！愿你今天充满喜乐与温暖 ❤️", link: "https://www.youtube.com/watch?v=E8gmARGvPlI" }
     };
 
     const today = new Date();
     const day = today.getDate();
-    const month = today.getMonth() + 1; // 月份从0开始
-
+    const month = today.getMonth() + 1;
     const giftDiv = document.getElementById("gift");
 
     if (month === 12 && day <= 25) {
-      giftDiv.innerHTML = `<p>今天的礼物：<strong>${gifts[day]}</strong></p>`;
+      const gift = gifts[day];
+      giftDiv.innerHTML = `<p>今天的礼物：<strong><a href="${gift.link}" target="_blank">${gift.text}</a></strong></p>`;
     } else if (month === 12 && day > 25) {
       giftDiv.innerHTML = `<p>🎅 圣诞节已过，期待明年！</p>`;
     } else {
