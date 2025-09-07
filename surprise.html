@@ -11,17 +11,64 @@
       text-align: center;
       padding: 50px;
     }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .gift-box {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+      max-width: 400px;
+    }
   </style>
 </head>
 <body>
   <h1>🎁 圣诞倒数日历</h1>
-  <div id="gift"></div>
+  <div id="gift" class="gift-box"></div>
+
   <script>
-    const day = new Date().getDate();
-    if(day <= 25){
-      document.getElementById("gift").innerHTML = `<p>今天的礼物：<strong>第 ${day} 天惊喜！</strong></p>`;
+    const gifts = {
+      1: "一首温暖的圣诞歌 🎶",
+      2: "一张雪景壁纸 ❄️",
+      3: "一个圣诞笑话 😂",
+      4: "一段圣诞动画短片 📽️",
+      5: "一杯热可可的配方 ☕",
+      6: "一张圣诞贺卡 📝",
+      7: "一个小游戏链接 🎮",
+      8: "一段圣诞故事 📖",
+      9: "一张圣诞贴纸 🏷️",
+      10: "一段圣诞钢琴曲 🎹",
+      11: "一张圣诞灯饰照片 💡",
+      12: "一份圣诞曲奇食谱 🍪",
+      13: "一段圣诞舞蹈视频 💃",
+      14: "一张圣诞老人照片 🎅",
+      15: "一段圣诞祝福语 💌",
+      16: "一张圣诞树照片 🎄",
+      17: "一段圣诞颂歌合唱 🎤",
+      18: "一份圣诞手工教程 ✂️",
+      19: "一张圣诞邮票 📮",
+      20: "一段圣诞灯光秀视频 🌟",
+      21: "一张圣诞雪人照片 ⛄",
+      22: "一段圣诞烛光晚会视频 🕯️",
+      23: "一份圣诞派对邀请函 🎉",
+      24: "一段平安夜特别祝福 🌙",
+      25: "🎄 圣诞快乐！愿你今天充满喜乐与温暖 ❤️"
+    };
+
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1; // 月份从0开始
+
+    const giftDiv = document.getElementById("gift");
+
+    if (month === 12 && day <= 25) {
+      giftDiv.innerHTML = `<p>今天的礼物：<strong>${gifts[day]}</strong></p>`;
+    } else if (month === 12 && day > 25) {
+      giftDiv.innerHTML = `<p>🎅 圣诞节已过，期待明年！</p>`;
     } else {
-      document.getElementById("gift").innerHTML = `<p>圣诞节已过，期待明年！</p>`;
+      giftDiv.innerHTML = `<p>🎄 圣诞倒数将在 12 月 1 日开启！</p>`;
     }
   </script>
 </body>
