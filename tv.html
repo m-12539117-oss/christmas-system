@@ -13,6 +13,16 @@
   }
   h1 {
     font-size: 36px;
+    margin-bottom: 10px;
+  }
+  p.tip {
+    font-size: 18px;
+    color: #ffebcd;
+    margin-bottom: 10px;
+  }
+  p.time {
+    font-size: 20px;
+    color: #ffd700;
     margin-bottom: 40px;
   }
   .channel-grid {
@@ -44,6 +54,8 @@
 <body>
 
 <h1>📺 圣诞直播遥控器</h1>
+<p class="tip">点击任意频道按钮将在新标签页打开直播或视频</p>
+<p class="time" id="currentTime">加载时间中...</p>
 
 <div class="channel-grid">
   <!-- 第一行 -->
@@ -62,6 +74,20 @@
   <a class="channel-btn" href="https://www.youtube.com/watch?v=AtfN1ddTUC0" target="_blank">📺 综合台·东京圣诞</a>
   <a class="channel-btn" href="index.html">🏠 返回首页</a>
 </div>
+
+<script>
+function updateTime() {
+  const now = new Date();
+  const options = { 
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  };
+  document.getElementById('currentTime').textContent = 
+    '当前时间：' + now.toLocaleString('zh-CN', options);
+}
+setInterval(updateTime, 1000);
+updateTime();
+</script>
 
 </body>
 </html>
